@@ -26,7 +26,7 @@
     </mat-form-field>
 
 
-    <button mat-raised-button color="primary" style="margin-left: 5px;" (click)="myFunction($event)">
+    <button mat-raised-button color="primary" style="margin-left: 5px;" (click)="myFunction()">
       <mat-icon>search</mat-icon>Buscar
     </button>
 
@@ -37,7 +37,8 @@
       <ul>
         <li *ngFor="let busqueda of busqueda">
           <mat-checkbox class="example-margin" [(ngModel)]="busqueda.Checked">
-            {{busqueda.Descripcion}}
+            {{busqueda.Descripcion}} 
+
           </mat-checkbox>
         </li>
       </ul>
@@ -54,7 +55,12 @@
       <ul>
         <li *ngFor="let pagina of paginasBusqueda">
 
-          <a [href]="srcUrl" target="_blank" (click)="evento(pagina)">{{pagina.Descripcion}}</a>
+          <a [href]="srcUrl" target="_blank" (click)="evento(pagina)">{{pagina.Descripcion}}
+<br>
+            Descripcion de la pagina.
+<br>
+Calidad de busqueda:
+          </a>
 
         </li>
       </ul>

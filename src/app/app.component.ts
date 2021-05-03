@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { TipoBusqueda } from 'src/app/objetos/TipoBusqueda';
-import { Paginas, PaginasEspacializadosEspañol, PaginasEspañol } from './objetos/Paginas';
+import { Paginas, PaginasEspacializadosEspañol,  PaginasEspañol } from './objetos/Paginas';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,7 +31,7 @@ export class AppComponent {
       Checked:false,
       Paginas:PaginasEspacializadosEspañol
     },
-    { Id: 3, Descripcion: 'Diccionarios generales en inglés', Checked:false,   Paginas:PaginasEspacializadosEspañol },
+    { Id: 3, Descripcion: 'Diccionarios generales en frances', Checked:false,   Paginas:PaginasEspacializadosEspañol },
     { Id: 4, Descripcion: 'Diccionarios especializados en inglés', Checked:false ,   Paginas:PaginasEspacializadosEspañol},
     { Id: 5, Descripcion: 'Traducción del inglés al español', Checked:false ,   Paginas:PaginasEspacializadosEspañol},
     { Id: 6, Descripcion: 'Traducción especializada del inglés al español', Checked:false,   Paginas:PaginasEspacializadosEspañol },
@@ -42,15 +42,25 @@ export class AppComponent {
 
   resultado: string[] = []
 
-  myFunction(data:any)
+  myFunction()
   {
     let paginas : Paginas[] = this.busqueda.find(m=>m.Checked === true).Paginas;
     this.paginasBusqueda = paginas.slice();
-  
+
  }
  evento(data:Paginas)
  {
- this.srcUrl =  data.URL+this.textoABuscar;
+  
+   if(data.Reemplazo)
+   {
+    this.srcUrl = data.URL.replace('=brucomodin','='+this.textoABuscar.toString());
+   }
+   else{
+    this.srcUrl =  data.URL+this.textoABuscar;
+  }
+ //
+ 
+
 
  }
 }

@@ -10,6 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MaterialModule } from './shared/modules/material/material.module';
+
 import { SafePipe } from './safe-pipe';
 
 @NgModule({
