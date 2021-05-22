@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { TipoBusqueda } from 'src/app/objetos/TipoBusqueda';
-import { Paginas, PaginasEspacializadosEspañol, PaginasEspañol } from './objetos/Paginas';
+import { Paginas, PaginasFrancesEspañol, PaginasEspañolFrances, PaginasEspañol, PaginasFrances } from './objetos/Paginas';
 
 @Component({
   selector: 'app-root',
@@ -24,16 +24,22 @@ export class AppComponent {
     {
       Id: 1,
       Descripcion: 'ES-FR',
-      Checked: false,
-      Paginas: PaginasEspañol
+      Checked: true,
+      Paginas: PaginasEspañolFrances
     },
     {
       Id: 2,
+      Descripcion: 'FR-ES',
+      Checked: false,
+      Paginas: PaginasFrancesEspañol
+    },
+    {
+      Id: 3,
       Descripcion: 'ES',
       Checked: false,
-      Paginas: PaginasEspacializadosEspañol
+      Paginas: PaginasEspañol
     },
-    { Id: 3, Descripcion: 'FR', Checked: false, Paginas: PaginasEspacializadosEspañol },
+    { Id: 4, Descripcion: 'FR', Checked: false, Paginas: PaginasFrances },
 
   ];
 

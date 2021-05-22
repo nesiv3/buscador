@@ -12,6 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MaterialModule } from './shared/modules/material/material.module';
 
 import { SafePipe } from './safe-pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SafePipe } from './safe-pipe';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MaterialModule
+    MaterialModule,
+    NgbModule
      
   ],
 
