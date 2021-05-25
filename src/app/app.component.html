@@ -52,7 +52,10 @@
           <div class="contenido-div">
             <div
               [ngClass]="{'color-3':((pagina.Puntuacion>(100/3)) && (pagina.Puntuacion<=(50))),'color-1':pagina.Puntuacion<=(50/3),'color-2':((pagina.Puntuacion>(50/3)) && (pagina.Puntuacion<=(100/3)))}">
-              Puntuación: {{pagina.Puntuacion}}</div>
+            
+              Puntuación: {{pagina.Puntuacion}}
+              <ngb-rating [max]="50" [(rate)]="pagina.Puntuacion" [readonly]="false"></ngb-rating>
+            </div>
             <a [href]="srcUrl" target="_blank" (click)="evento(pagina)">{{pagina.Nombre}}
 
             </a>

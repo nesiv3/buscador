@@ -3,6 +3,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
+
 import { TipoBusqueda } from 'src/app/objetos/TipoBusqueda';
 import { Paginas, PaginasFrancesEspañol, PaginasEspañolFrances, PaginasEspañol, PaginasFrances } from './objetos/Paginas';
 
@@ -46,7 +47,7 @@ export class AppComponent {
   resultado: string[] = []
 
 
-
+  rating = 0;
   myFunction() {
     let paginas: Paginas[] = this.seleccion.Paginas;
     this.paginasBusqueda = paginas.slice();
