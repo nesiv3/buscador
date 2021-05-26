@@ -16,7 +16,7 @@ export class AppComponent {
   title = 'buscador';
   srcUrl = 'https://dle.rae.es/';
   srcTranslate: "https://www.google.com"
-  fecha = Date.now().toLocaleString();
+  fecha :Date = new Date();
   favoriteSeason: string;
   paginasBusqueda: Paginas[] = [];
   seleccion: TipoBusqueda = new TipoBusqueda();
@@ -66,6 +66,10 @@ export class AppComponent {
   }
   systemChange(data: TipoBusqueda) {
     this.seleccion = data;
+  }
+
+  calcularPuntuacion(valor:number):number{
+    return valor / 10;
   }
 
 }

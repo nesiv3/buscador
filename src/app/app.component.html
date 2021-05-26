@@ -1,9 +1,11 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
 
-  <span> InterTerm :: Buscador de traducciones y definiciones en internet {{ fecha }} </span>
+  <span> InterTerm :: Buscador de traducciones y definiciones en internet    </span>
   <div class="spacer"></div>
-
+  <div style="text-align: right;">
+  <span>Fecha Actual: {{ fecha | date: "dd/MM/yyyy" }}</span>
+</div>
 </div>
 
 <div class="content" role="main">
@@ -54,7 +56,7 @@
               [ngClass]="{'color-3':((pagina.Puntuacion>(100/3)) && (pagina.Puntuacion<=(50))),'color-1':pagina.Puntuacion<=(50/3),'color-2':((pagina.Puntuacion>(50/3)) && (pagina.Puntuacion<=(100/3)))}">
             
               Puntuación: {{pagina.Puntuacion}}
-              <ngb-rating [max]="50" [(rate)]="pagina.Puntuacion" [readonly]="false"></ngb-rating>
+              <ngb-rating [max]="5" rate={{calcularPuntuacion(pagina.Puntuacion)}} [readonly]="true"></ngb-rating>
             </div>
             <a [href]="srcUrl" target="_blank" (click)="evento(pagina)">{{pagina.Nombre}}
 
