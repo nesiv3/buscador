@@ -25,13 +25,13 @@ export class AppComponent {
     {
       Id: 1,
       Descripcion: 'ES-FR',
-      Checked: true,
+      Checked: false,
       Paginas: PaginasEspañolFrances
     },
     {
       Id: 2,
       Descripcion: 'FR-ES',
-      Checked: false,
+      Checked: true,
       Paginas: PaginasFrancesEspañol
     },
     {

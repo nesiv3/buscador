@@ -1,7 +1,9 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-
-  <span> InterTerm :: Buscador de traducciones y definiciones en internet    </span>
+<div class="toolbar" role="banner" >
+  <div  class="container">
+  <img  src="../assets/MedTerm.jpg"/>
+</div>
+  <span> Buscador de traducciones y definiciones médicas en internet    </span>
   <div class="spacer"></div>
   <div style="text-align: right;">
   <span>Fecha Actual: {{ fecha | date: "dd/MM/yyyy" }}</span>
@@ -52,19 +54,19 @@
       <ul>
         <li *ngFor="let pagina of paginasBusqueda">
           <div class="contenido-div">
+               <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">
+            </a>
             <div
               [ngClass]="{'color-3':((pagina.Puntuacion>(100/3)) && (pagina.Puntuacion<=(50))),'color-1':pagina.Puntuacion<=(50/3),'color-2':((pagina.Puntuacion>(50/3)) && (pagina.Puntuacion<=(100/3)))}">
             
-              Puntuación: {{pagina.Puntuacion}}
+              Puntuación:
               <ngb-rating [max]="5" rate={{calcularPuntuacion(pagina.Puntuacion)}} [readonly]="true"></ngb-rating>
             </div>
-            <a [href]="srcUrl" target="_blank" (click)="evento(pagina)">{{pagina.Nombre}}
-
+         
+            <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">  <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> {{pagina.Nombre}}
             </a>
             {{pagina.Descripcion}}
             <br>
-
-
           </div>
 
 
