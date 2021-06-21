@@ -78,4 +78,9 @@ export class AppComponent implements OnInit  {
     return valor / 10;
   }
 
+
+  formatearTooltip(valor:Paginas):string{
+    return 'Fiabilidad: ' + valor.Fiabilidad +  ' Contenido: ' + valor.Contenido + ' Busqueda: ' + valor.Contenido;
+  }
+
 }

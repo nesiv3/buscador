@@ -13,6 +13,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { SafePipe } from './safe-pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatTooltipModule,
     AppRoutingModule,
     MatRadioModule,
     MatCheckboxModule,

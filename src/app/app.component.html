@@ -53,7 +53,13 @@
     <div style="margin-right: 10px;">
       <ul>
         <li *ngFor="let pagina of paginasBusqueda">
-          <div class="contenido-div">
+          <div class="contenido-div" 
+          matTooltip={{formatearTooltip(pagina)}} 
+          matTooltipPosition="right"
+        
+          aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+        >
+            
             <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">
             </a>
             <div
