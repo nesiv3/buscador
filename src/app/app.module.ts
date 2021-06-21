@@ -10,7 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MaterialModule } from './shared/modules/material/material.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { SafePipe } from './safe-pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MatRadioModule,
     MatCheckboxModule,

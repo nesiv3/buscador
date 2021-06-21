@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -12,7 +12,8 @@ import { Paginas, PaginasFrancesEspañol, PaginasEspañolFrances, PaginasEspaño
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit  {
+ 
   title = 'buscador';
   srcUrl = 'https://dle.rae.es/';
   srcTranslate: "https://www.google.com"
@@ -48,6 +49,11 @@ export class AppComponent {
 
 
   rating = 0;
+  ngOnInit()
+  {
+    this.seleccion = this.busqueda.find(f=>f.Checked===true);
+    console.log(this.seleccion);
+  }
   myFunction() {
     let paginas: Paginas[] = this.seleccion.Paginas;
     this.paginasBusqueda = paginas.slice();

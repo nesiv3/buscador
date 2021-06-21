@@ -1,13 +1,13 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner" >
-  <div  class="container">
-  <img  src="../assets/MedTerm.jpg"/>
-</div>
-  <span> Buscador de traducciones y definiciones médicas en internet    </span>
+<div class="toolbar" role="banner">
+  <div class="container">
+    <img src="../assets/MedTerm.jpg" />
+  </div>
+  <span> Buscador de traducciones y definiciones médicas en internet </span>
   <div class="spacer"></div>
   <div style="text-align: right;">
-  <span>Fecha Actual: {{ fecha | date: "dd/MM/yyyy" }}</span>
-</div>
+    <span>Fecha Actual: {{ fecha | date: "dd/MM/yyyy" }}</span>
+  </div>
 </div>
 
 <div class="content" role="main">
@@ -38,7 +38,7 @@
   <p>Donde buscarlo?</p>
   <section class="example-section">
     <span class="example-list-section">
-      <mat-radio-group aria-label="Seleccione" [(ngModel)]="seleccion" >
+      <mat-radio-group aria-label="Seleccione" [(ngModel)]="seleccion">
         <mat-radio-button *ngFor="let op of busqueda" name="opciones" [value]="op" style="margin: 10px">
           {{op.Descripcion}}
         </mat-radio-button>
@@ -54,16 +54,18 @@
       <ul>
         <li *ngFor="let pagina of paginasBusqueda">
           <div class="contenido-div">
-               <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">
+            <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">
             </a>
             <div
-              [ngClass]="{'color-3':((pagina.Puntuacion>(100/3)) && (pagina.Puntuacion<=(50))),'color-1':pagina.Puntuacion<=(50/3),'color-2':((pagina.Puntuacion>(50/3)) && (pagina.Puntuacion<=(100/3)))}">
-            
+              [ngClass]="{'color-3':((pagina.Puntuacion>(4)) && (pagina.Puntuacion<=(5))),'color-1':pagina.Puntuacion<=(3),'color-2':((pagina.Puntuacion>(3)) && (pagina.Puntuacion<=(4)))}">
+
               Puntuación:
-              <ngb-rating [max]="5" rate={{calcularPuntuacion(pagina.Puntuacion)}} [readonly]="true"></ngb-rating>
+              <ngb-rating [max]="5" rate={{pagina.Puntuacion}} [readonly]="true"></ngb-rating>
             </div>
-         
-            <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">  <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> {{pagina.Nombre}}
+
+            <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace"> <img class="images"
+                src={{pagina.Logo}} width="30" height="30" onerror="this.src='/assets/MedTerm.jpg';"/>
+              {{pagina.Nombre}}
             </a>
             {{pagina.Descripcion}}
             <br>
