@@ -12,12 +12,12 @@ import { Paginas, PaginasFrancesEspañol, PaginasEspañolFrances, PaginasEspaño
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit  {
- 
+export class AppComponent implements OnInit {
+
   title = 'buscador';
   srcUrl = 'https://dle.rae.es/';
   srcTranslate: "https://www.google.com"
-  fecha :Date = new Date();
+  fecha: Date = new Date();
   favoriteSeason: string;
   paginasBusqueda: Paginas[] = [];
   seleccion: TipoBusqueda = new TipoBusqueda();
@@ -49,9 +49,8 @@ export class AppComponent implements OnInit  {
 
 
   rating = 0;
-  ngOnInit()
-  {
-    this.seleccion = this.busqueda.find(f=>f.Checked===true);
+  ngOnInit() {
+    this.seleccion = this.busqueda.find(f => f.Checked === true);
     console.log(this.seleccion);
   }
   myFunction() {
@@ -62,9 +61,13 @@ export class AppComponent implements OnInit  {
   }
   evento(data: Paginas) {
 
-    if (data.Reemplazo) {
+
+    if (data.Talcual) {
+      this.srcUrl = data.URL;
+    } else if (data.Reemplazo) {
       this.srcUrl = data.URL.replace('=brucomodin', '=' + this.textoABuscar.toString());
     }
+
     else {
       this.srcUrl = data.URL + this.textoABuscar;
     }
@@ -74,13 +77,13 @@ export class AppComponent implements OnInit  {
     this.seleccion = data;
   }
 
-  calcularPuntuacion(valor:number):number{
+  calcularPuntuacion(valor: number): number {
     return valor / 10;
   }
 
 
-  formatearTooltip(valor:Paginas):string{
-    return 'Fiabilidad: ' + valor.Fiabilidad +  ' Contenido: ' + valor.Contenido + ' Busqueda: ' + valor.Contenido;
+  formatearTooltip(valor: Paginas): string {
+    return 'Fiabilidad: ' + valor.Fiabilidad + ' Contenido: ' + valor.Contenido + ' Busqueda: ' + valor.Contenido;
   }
 
 }

@@ -5,9 +5,6 @@
   </div>
   <span> Buscador de traducciones y definiciones médicas en internet </span>
   <div class="spacer"></div>
-  <div style="text-align: right;">
-    <span>Fecha Actual: {{ fecha | date: "dd/MM/yyyy" }}</span>
-  </div>
 </div>
 
 <div class="content" role="main">
@@ -53,24 +50,20 @@
     <div style="margin-right: 10px;">
       <ul>
         <li *ngFor="let pagina of paginasBusqueda">
-          <div class="contenido-div" 
-          matTooltip={{formatearTooltip(pagina)}} 
-          matTooltipPosition="right"
-        
-          aria-label="Button that displays a tooltip that hides when scrolled out of the container"
-        >
-            
+          <div class="contenido-div" matTooltip={{formatearTooltip(pagina)}} matTooltipPosition="right"
+            aria-label="Button that displays a tooltip that hides when scrolled out of the container">
+
             <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace">
             </a>
             <div
-              [ngClass]="{'color-3':((pagina.Puntuacion>(4)) && (pagina.Puntuacion<=(5))),'color-1':pagina.Puntuacion<=(3),'color-2':((pagina.Puntuacion>(3)) && (pagina.Puntuacion<=(4)))}">
+              [ngClass]="{'color-3':(pagina.Puntuacion>=(4)),'color-1':pagina.Puntuacion<(3),'color-2':(pagina.Puntuacion>=(3))}">
 
               Puntuación:
-              <ngb-rating [max]="5" rate={{pagina.Puntuacion}} [readonly]="true"></ngb-rating>
+              <ngb-rating [max]="4" rate={{pagina.Puntuacion}} [readonly]="true"></ngb-rating>
             </div>
 
             <a [href]="srcUrl" target="_blank" (click)="evento(pagina)" class="enlace"> <img class="images"
-                src={{pagina.Logo}} width="30" height="30" onerror="this.src='/assets/MedTerm.jpg';"/>
+                src={{pagina.Logo}} width="30" height="30" onerror="this.src='/assets/MedTerm.jpg';" />
               {{pagina.Nombre}}
             </a>
             {{pagina.Descripcion}}
@@ -93,16 +86,18 @@
 
   <!-- Footer -->
   <footer>
-    Prohibida la reproducción total o parcial de esta página sin el permiso del autor.
-    El contenido está protegido con una licencia de Creative Commons
-    <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Autor:
-      M. Gonzalo Claros &nbsp;
+    MedTerm es un proyecto académico desarrollado por Bruno Salgado Berzal en el marco del Máster CITISP de la
+    Universidad de Alcalá, inspirado en InterTerm de M. Gonzalo Claros. Prohibida la reproducción total o parcial de
+    esta página sin el permiso del autor.
+    El contenido está protegido con una licencia de Creative Commons.
+    <a href="https://www.linkedin.com/in/brunosalgadob/" target="_blank" rel="noopener"> Autor:
+      Bruno Salgado Berzal &nbsp;
       <div class="github-star-badge">
         <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
         </svg>
-        Star
+        Contacto
       </div>
     </a>
 

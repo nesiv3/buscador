@@ -46,16 +46,14 @@ $material-design-icons-font-directory-path: '~material-design-icons-iconfont/dis
 
     margin: 3.5em;
     flex: 0 0 50px;
-    height: 100px;
+    height: 140px;
     box-shadow: rgb(3 102 214 / 30%) 0px 0px 0px 3px;
     border-radius: 6px;
     padding: 1em;
-    margin: 2em;
- 
+    margin: 2em; 
     display: block;
     background: #fff;
-    transition: all 300ms;
-
+        transition: all 300ms;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,7 +331,50 @@ $material-design-icons-font-directory-path: '~material-design-icons-iconfont/dis
       display: none;
       visibility: hidden;
     }
+
+    .contenido-div
+    {
+  
+      margin: 3.5em;
+      flex: 0 0 50px;
+      height: 140px;
+      width: 300px;
+      box-shadow: rgb(3 102 214 / 30%) 0px 0px 0px 3px;
+      border-radius: 6px;
+      padding: 1em;
+      margin: 2em; 
+      display: block;
+      background: #fff;
+          transition: all 300ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+
+    .color-1{
+      color: red;
+      margin-left:100px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+    .color-2{
+      color:gold;
+      margin-left:100px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+    .color-3{
+      color:lime;
+      margin-left:100px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
   }
+
+ 
 
   .example-radio-group {
     display: flex;
@@ -362,8 +403,8 @@ $material-design-icons-font-directory-path: '~material-design-icons-iconfont/dis
    
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     z-index: 10;
   }
 
